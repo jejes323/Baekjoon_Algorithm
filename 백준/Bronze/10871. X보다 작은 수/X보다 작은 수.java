@@ -1,17 +1,21 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] str = br.readLine().split(" ");
-        int N = Integer.parseInt(str[0]);
-        int target = Integer.parseInt(str[1]);
-        String[] number = br.readLine().split(" ");
-        for(int i = 0; i < N; i++) {
-            if(Integer.parseInt(number[i]) < target) {
-                System.out.print(Integer.parseInt(number[i]) + " ");
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int target = Integer.parseInt(st.nextToken());
+        
+        st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            if(num < target) {
+                sb.append(num + " ");
             }
         }
-        
+        System.out.print(sb);
     }
 }
