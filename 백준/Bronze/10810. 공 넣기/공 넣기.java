@@ -20,8 +20,10 @@ public class Main {
             }
         }
         
+        StringBuilder sb = new StringBuilder();
         for(int a = 0; a < M; a++) {
-            System.out.print(num[a] + " ");
+            sb.append(num[a] + " ");
         }
+        System.out.print(sb);
     }
 }
