@@ -3,7 +3,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
@@ -24,7 +23,6 @@ public class Main {
         for(int a = 0; a < N; a++) {
             sb.append(num[a]).append(" ");
         }
-        bw.write(sb.toString().trim());
-        bw.flush();
+        System.out.print(sb);
     }
 }
