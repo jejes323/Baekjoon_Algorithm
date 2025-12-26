@@ -6,8 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] num = new int[10];
         for(int i = 0; i < 10; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(br.readLine());
             int result = a % 42;
             for(int j = 0; j < 10; j++) {
                 if (num[j] == result) {
