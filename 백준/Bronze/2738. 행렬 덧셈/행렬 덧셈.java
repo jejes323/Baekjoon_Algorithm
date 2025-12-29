@@ -18,11 +18,13 @@ public class Main {
                 }
             }
         }
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < a; i++) {
             for(int j = 0; j < b; j++) {
-                System.out.print(num1[i][j] + " ");
+                sb.append(num1[i][j]).append(" ");
             }
-            System.out.print("\n");
+            sb.append("\n");
         }
+        System.out.print(sb);
     }
 }
