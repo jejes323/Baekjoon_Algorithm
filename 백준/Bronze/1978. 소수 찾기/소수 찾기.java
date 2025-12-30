@@ -10,15 +10,17 @@ public class Main {
         int count = 0;
         
         for(int i = 0; i < tcase; i++) {
-            boolean check = true;
             int a = Integer.parseInt(st.nextToken());
-            for(int j = 2; j < a; j++) {
+            if(a < 2) continue;
+            boolean check = true;
+            
+            for(int j = 2; j * j <= a; j++) {
                 if(a % j == 0) {
                     check = false;
                     break;
                 }
             }
-            if(check && a != 1) count++;
+            if(check) count++;
         }
         System.out.print(count);
     }
