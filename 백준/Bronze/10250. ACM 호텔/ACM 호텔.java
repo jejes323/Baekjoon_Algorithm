@@ -5,29 +5,34 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int tcase = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
         for(int i = 0; i < tcase; i++) {
             st = new StringTokenizer(br.readLine());
             int h = Integer.parseInt(st.nextToken());
             int w = Integer.parseInt(st.nextToken());
             int n = Integer.parseInt(st.nextToken());
-            int count = 0;
-            boolean check = false;
-            StringBuilder sb = new StringBuilder();
-            for(int j = 1; j <= w; j++) {
-                for(int k = 1; k <= h; k++) {
-                    count++;
-                    if(count == n) {
-                        sb.append(k);
-                        if(j < 10) sb.append(0);
-                        sb.append(j).append('\n');
-                        check = true;
-                        break;
-                    }
-                }
-                if(check) break;
+            
+            if(n % h != 0) {
+                sb.append(n % h);
+            } else {
+                sb.append(h);
             }
-            System.out.print(sb);
+            
+            if(n % h != 0) {
+                if(n / h + 1 < 10) {
+                    sb.append(0).append(n / h + 1).append('\n');
+                } else {
+                    sb.append(n / h + 1).append('\n');
+                }
+            } else {
+                if(n / h < 10) {
+                    sb.append(0).append(n / h).append('\n');
+                } else {
+                    sb.append(n / h).append('\n');
+                }
+            }
         }
+        System.out.print(sb);
     }
 }
