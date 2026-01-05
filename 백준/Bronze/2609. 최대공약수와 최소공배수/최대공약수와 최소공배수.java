@@ -9,18 +9,16 @@ public class Main {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
         
-        int min = a;
-        if(b < a) {
-            min = b;
+        int x = a;
+        int y = b;
+        
+        while(y != 0) {
+            int temp = x % y;
+            x = y;
+            y = temp;
         }
         StringBuilder sb = new StringBuilder();
-        int target_max = 1;
-        for(int i = 2; i <= min; i++) {
-            if(a % i == 0 && b % i == 0) {
-                target_max = i;
-            }
-        }
-        sb.append(target_max).append('\n').append((a / target_max) * b);
+        sb.append(x).append('\n').append((a / x) * b);
         System.out.print(sb);
         
     }
