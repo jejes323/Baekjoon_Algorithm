@@ -6,27 +6,29 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int tcase = Integer.parseInt(br.readLine());
         
+        
+        
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < tcase; i++) {
-            char[] arr = br.readLine().toCharArray();
             Deque<Character> dq = new ArrayDeque<>();
-            
+            String st = br.readLine();
             boolean check = true;
-            
-            for(char c : arr) {
-                if(c =='(') {
-                    dq.push(c);
+            for(int j = 0; j < st.length(); j++) {
+                char c = st.charAt(j);
+                
+                if(c == '(') {
+                    dq.push('(');
                 } else if (c == ')') {
-                    if(dq.isEmpty()) {
-                        check = false;
-                        break;
+                    if (!dq.isEmpty()) {
+                        dq.pop();
                     }
-                    dq.pop();
+                    else check = false;
                 }
+                
             }
-            if(check && dq.isEmpty()) sb.append("YES").append('\n');
+            if(dq.isEmpty() && check) sb.append("YES").append('\n');
             else sb.append("NO").append('\n');
         }
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
