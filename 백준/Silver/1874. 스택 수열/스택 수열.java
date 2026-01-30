@@ -7,29 +7,25 @@ public class Main {
         int tcase = Integer.parseInt(br.readLine());
         
         Deque<Integer> dq = new ArrayDeque<>();
-        int count = 0;
-        
+        int n = 0;
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < tcase; i++) {
-            int num = Integer.parseInt(br.readLine());
+        for(int i = 1; i <= tcase; i++) {
+            int target = Integer.parseInt(br.readLine());
             
-            
-            while(count < num) {
-                count++;
-                dq.push(count);
+            while(n < target) {
+                n++;
+                dq.push(n);
                 sb.append('+').append('\n');
-
             }
             
-            if(!dq.isEmpty() && dq.peek() == num) {
+            if(!dq.isEmpty() && dq.peekFirst() == target) {
                 dq.pop();
                 sb.append('-').append('\n');
             } else {
-                System.out.print("NO");
+                System.out.println("NO");
                 return;
             }
         }
-        
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
