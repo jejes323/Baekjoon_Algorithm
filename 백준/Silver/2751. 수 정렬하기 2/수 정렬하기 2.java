@@ -8,15 +8,17 @@ public class Main {
         
         int[] arr = new int[tcase];
         for(int i = 0; i < tcase; i++) {
-            int a = Integer.parseInt(br.readLine());
-            arr[i] = a;
+            arr[i] = Integer.parseInt(br.readLine());
         }
         
         Arrays.sort(arr);
+        
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < tcase; i++) {
-            sb.append(arr[i]).append('\n');
+        
+        for(int x : arr) {
+            sb.append(x).append('\n');
         }
-        System.out.print(sb);
+        
+        System.out.println(sb);
     }
 }
